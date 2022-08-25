@@ -86,10 +86,12 @@ with tab2:
 		
 			
 	st.markdown('###### Leaderboard - Block wise')
+	x = df.groupby(['Block']).sum()['Point'].reset_index().sort_values(by='Point', ascending=False)
 
-	x = st.dataframe(df.groupby(['Block']).sum()['Point'].reset_index().sort_values(by='Point', ascending=False))
-	
 	st.dataframe(df.round(x,1))
+	
+	#st.dataframe(df.groupby(['Block']).sum()['Point'].reset_index().sort_values(by='Point', ascending=False))
+	
 		
 		
 
